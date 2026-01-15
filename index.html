@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Knew It! ❤️</title>
+    <style>
+        body {
+            background-color: #fff0f3;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #d63384;
+        }
+
+        .card {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.15);
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-emoji { font-size: 5rem; margin-bottom: 1rem; }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .sub-text { font-size: 1.3rem; margin-bottom: 2rem; color: #ff4d6d; }
+
+        .compliments-list {
+            text-align: left;
+            background: #fff9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #ff4d6d;
+        }
+
+        .compliment-item {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .check { margin-right: 10px; color: #ff4d6d; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="main-emoji">🤭💖</div>
+        <h1>I knew it!</h1>
+        <p class="sub-text">I love you too more than words can say... 😘☺️</p>
+
+        <div class="compliments-list">
+            <div class="compliment-item">✨ You have the most beautiful, sparkling eyes.</div>
+            <div class="compliment-item">✨ Your smile is literally my favorite thing in the world.</div>
+            <div class="compliment-item">✨ You are incredibly kind and smart.</div>
+            <div class="compliment-item">✨ Every time you laugh, the world feels better.</div>
+            <div class="compliment-item">✨ You have a soul that is pure and rare.</div>
+            <div class="compliment-item">✨ You're my favorite person to talk to.</div>
+        </div>
+    </div>
+
+    <script>
+        function celebrate() {
+            const emojis = ['❤️', '💖', '✨', '🌸', '🥰'];
+            for(let i=0; i<30; i++) {
+                const confetto = document.createElement('div');
+                confetto.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+                confetto.style.position = 'fixed';
+                confetto.style.left = Math.random() * 100 + 'vw';
+                confetto.style.top = '-20px';
+                confetto.style.fontSize = '24px';
+                confetto.style.zIndex = '999';
+                confetto.style.transition = 'transform ' + (Math.random() * 3 + 2) + 's linear, opacity 2s';
+                
+                document.body.appendChild(confetto);
+
+                setTimeout(() => {
+                    confetto.style.transform = `translateY(${window.innerHeight + 50}px) rotate(${Math.random()*360}deg)`;
+                    confetto.style.opacity = '0';
+                }, 100);
+            }
+        }
+        window.onload = celebrate;
+    </script>
+</body>
+</html>
 
